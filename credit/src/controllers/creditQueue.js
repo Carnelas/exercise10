@@ -1,8 +1,8 @@
 const kue = require('kue'),
   queue = kue.createQueue(
-    {
+/*     {
     redis: 'redis://redis:6379'
-  }
+  } */
   );
 const checkCredit = require('./checkCredit');
 const rollBackCredit = require('./rollBackCredit');

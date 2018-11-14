@@ -1,8 +1,8 @@
 const kue = require('kue'),
   queue = kue.createQueue(
-    {
+/*     {
     redis: 'redis://redis:6379'
-  }
+  } */
   );
 const sendMessage = require('./sendMessage');
 const uuidv4 = require('uuid/v4');
