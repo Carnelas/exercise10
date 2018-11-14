@@ -26,23 +26,23 @@ services:
   #   ports:
   #     - 48151:48151
   
-  service-v1:
-    build: message/
-    links:
-      - messageapp
-      - mongodb_message
-      - replica_message
-      - redis
-      - credit
-    ports:
-      - "9007:9007"
-    environment:
-      - SERVICE_NAME=service-v1
-    depends_on:
-      - messageapp
-      - mongodb_message
-      - replica_message
-      - redis
+  # service-v1:
+  #   build: message/
+  #   links:
+  #     - messageapp
+  #     - mongodb_message
+  #     - replica_message
+  #     - redis
+  #     - credit
+  #   ports:
+  #     - "9007:9007"
+  #   environment:
+  #     - SERVICE_NAME=service-v1
+  #   depends_on:
+  #     - messageapp
+  #     - mongodb_message
+  #     - replica_message
+  #     - redis
   # service-v2:
   #   build: message/
   #   deploy:
@@ -64,22 +64,22 @@ services:
   #     - replica_message
   #     - redis
   
-  credit:
-    build: credit/
-    ports:
-      - "9017:9017"
-    links:
-      - mongodb_credit
-      - replica_credit
-      - redis
-    depends_on:
-      - mongodb_credit
-      - replica_credit
-      - redis
-  messageapp:
-    image: cabify/backend-bootcamp-messageapp:exercise10
-    ports:
-      - "3000:3000"
+  # credit:
+  #   build: credit/
+  #   ports:
+  #     - "9017:9017"
+  #   links:
+  #     - mongodb_credit
+  #     - replica_credit
+  #     - redis
+  #   depends_on:
+  #     - mongodb_credit
+  #     - replica_credit
+  #     - redis
+  # messageapp:
+  #   image: cabify/backend-bootcamp-messageapp:exercise10
+  #   ports:
+  #     - "3000:3000"
 
   mongodb_credit:
     image: mongo
@@ -109,8 +109,7 @@ services:
     volumes:
       - ./message/data/replica:/message/data/replica
     ports:
-      - 27028:27028
-
+      - 27028:27028s
   redis:
     image: redis
     ports:

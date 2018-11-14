@@ -1,8 +1,10 @@
 const mongoose = require("mongoose");
 
 const servers = {
-  primary: "mongodb_message:27027",
-  replica: "replica_message:27028"
+  // primary: "mongodb:27027",
+  // replica: "replica:27028"
+  primary: "127.0.0.1:27027",
+  replica: "127.0.0.1:27028"
 };
 const database = "cabify_bootcamp";
 
