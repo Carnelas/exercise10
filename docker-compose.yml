@@ -34,8 +34,8 @@ services:
       - replica_message
       - redis
       - credit
-    expose:
-      - "9007"
+    ports:
+      - "9007:9007"
     environment:
       - SERVICE_NAME=service-v1
     depends_on:
