@@ -53,7 +53,7 @@ if (message.payment === true){
     }
   });
 
-  postReq.setTimeout(random(6000));
+  postReq.setTimeout(random(1000));
 
   postReq.on("timeout", () => {
     console.error("Timeout Exceeded!");
